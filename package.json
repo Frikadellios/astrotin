@@ -1,20 +1,28 @@
 {
-  "name": "",
+  "name": "astrotin",
   "type": "module",
   "version": "0.0.1",
   "scripts": {
-    "dev": "astro dev",
+    "dev": "tinacms dev -c \"astro dev --port 8080\"",
     "start": "astro dev",
-    "build": "astro check && astro build",
+    "build": "tinacms build --local --skip-cloud-checks & sleep 4 && astro build",
     "preview": "astro preview",
     "astro": "astro"
   },
   "dependencies": {
     "@astrojs/check": "^0.4.1",
+    "@astrojs/react": "^3.0.9",
+    "@types/react": "^18.2.48",
+    "@types/react-dom": "^18.2.18",
     "astro": "^4.2.2",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "tinacms": "^1.5.28",
     "typescript": "^5.3.3"
   },
   "devDependencies": {
-    "@types/bun": "^1.0.3"
+    "@tinacms/cli": "^1.5.39",
+    "@types/bun": "^1.0.3",
+    "@types/node": "^20.11.5"
   }
 }
