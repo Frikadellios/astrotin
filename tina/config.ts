@@ -21,7 +21,7 @@ export default defineConfig({
   },
   media: {
     tina: {
-      mediaRoot: "",
+      mediaRoot: "images",
       publicFolder: "public",
     },
   },
@@ -29,15 +29,22 @@ export default defineConfig({
   schema: {
     collections: [
       {
-        name: "post",
+        name: "posts",
         label: "Posts",
-        path: "content/posts",
+        path: "src/content/posts",
+        format: 'mdx',
         fields: [
           {
             type: "string",
             name: "title",
             label: "Title",
             isTitle: true,
+            required: true,
+          },
+          {
+            type: "datetime",
+            name: "posted",
+            label: "Date Posted",
             required: true,
           },
           {
